@@ -422,11 +422,6 @@
               <FilePath>.\dft.s</FilePath>
             </File>
             <File>
-              <FileName>Partie_Réelle.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\Partie_Réelle.s</FilePath>
-            </File>
-            <File>
               <FileName>sommeCarre.s</FileName>
               <FileType>2</FileType>
               <FilePath>.\sommeCarre.s</FilePath>
@@ -857,11 +852,6 @@
               <FileName>dft.s</FileName>
               <FileType>2</FileType>
               <FilePath>.\dft.s</FilePath>
-            </File>
-            <File>
-              <FileName>Partie_Réelle.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\Partie_Réelle.s</FilePath>
             </File>
             <File>
               <FileName>sommeCarre.s</FileName>
