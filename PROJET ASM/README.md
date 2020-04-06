@@ -10,7 +10,7 @@ les consignes avec vous lors de la dernière séance en présentiel.
 
 Etape 2 : DFT en virgule fixe (Voir fichier sommeCarre.s et dft.s (PROJ_UN-Etape2-VirguleFixe))
 
-Concernant la somme cos^2 +sin^2, nous sommes en train de le finaliser. Le principe est compris.
+Concernant la somme cos^2 + sin^2, nous sommes passés à la suite. Le principe est compris.
 
-Au sujet de la DFT, on pourra passer au tests si tout vous nous faites un retour.
+Au sujet de la DFT, on pourra passer aux tests si vous nous faites un retour.
 La partie imaginaire a été implémentée (et réelle aussi donc).
