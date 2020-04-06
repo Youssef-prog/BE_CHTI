@@ -1,0 +1,107 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             moncode, code
+    2 00000000                 export           sommeCarre
+    3 00000000         
+    4 00000000                 import           TabCos
+    5 00000000                 import           TabSin
+    6 00000000         
+    7 00000000         
+    8 00000000         sommeCarre
+                               proc
+    9 00000000         
+   10 00000000         ;  mov
+   11 00000000         ;boucleFor
+   12 00000000         ;  add r0, #1
+   13 00000000         ;  
+   14 00000000         ;  CMP R0, #5
+   15 00000000         ;  BNE boucleFor
+   16 00000000         ;  mov r1, #1
+   17 00000000         ;  mov r1, #1
+   18 00000000         
+   19 00000000         
+   20 00000000 490B            ldr              r1, =TabSin
+   21 00000002 F8D1 C006       ldr              r12, [r1, #(2*3)]
+   22 00000006         
+   23 00000006 EA4F 4C0C       mov              r12, r12, LSL #16
+   24 0000000A EA4F 4C1C       mov              r12, r12, LSR #16
+   25 0000000E         
+   26 0000000E FB0C FC0C       mul              r12, r12, r12
+   27 00000012         
+   28 00000012         
+   29 00000012 4908            ldr              r1, =TabCos
+   30 00000014 F8D1 2006       ldr              r2, [r1, #(2*3)]
+   31 00000018         
+   32 00000018 EA4F 4202       mov              r2, r2, LSL #16
+   33 0000001C EA4F 4212       mov              r2, r2, LSR #16
+   34 00000020         
+   35 00000020 FB02 F202       mul              r2, r2, r2
+   36 00000024         
+   37 00000024         
+   38 00000024 EB0C 0302       add              r3, r12, r2
+   39 00000028 4613            mov              r3, r2
+   40 0000002A         
+   41 0000002A F04F 0000       mov              r0, #0
+   42 0000002E         
+   43 0000002E                 endp
+   44 0000002E         
+   45 0000002E                 end
+              00 00 00000000 
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
+ork --depend=.\obj\sommecarre.d -o.\obj\sommecarre.o -I.\RTE\_Simu -IC:\Keil_v5
+\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DF
+P\2.2.0\Device\Include --predefine="__EVAL SETA 1" --predefine="__MICROLIB SETA
+ 1" --predefine="__UVISION_VERSION SETA 525" --predefine="_RTE_ SETA 1" --prede
+fine="STM32F10X_MD SETA 1" --list=sommecarre.lst sommeCarre.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+moncode 00000000
+
+Symbol: moncode
+   Definitions
+      At line 1 in file sommeCarre.s
+   Uses
+      None
+Comment: moncode unused
+sommeCarre 00000000
+
+Symbol: sommeCarre
+   Definitions
+      At line 8 in file sommeCarre.s
+   Uses
+      At line 2 in file sommeCarre.s
+Comment: sommeCarre used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+TabCos 00000000
+
+Symbol: TabCos
+   Definitions
+      At line 4 in file sommeCarre.s
+   Uses
+      At line 29 in file sommeCarre.s
+Comment: TabCos used once
+TabSin 00000000
+
+Symbol: TabSin
+   Definitions
+      At line 5 in file sommeCarre.s
+   Uses
+      At line 20 in file sommeCarre.s
+Comment: TabSin used once
+2 symbols
+341 symbols in table
