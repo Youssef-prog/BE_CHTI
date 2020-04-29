@@ -12,5 +12,4 @@ Etape 2 : DFT en virgule fixe (Voir fichier sommeCarre.s et dft.s (PROJ_UN-Etape
 
 Concernant la somme cos^2 + sin^2, nous sommes passés à la suite. Le principe est compris.
 
-Au sujet de la DFT, on pourra passer aux tests si vous nous faites un retour.
-La partie imaginaire a été implémentée (et réelle aussi donc).
+Au sujet de la DFT, on a procédé au débuggage des programmes dft.s et principal.c avec une suite assez concluante.

@@ -4,15 +4,16 @@ Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
 
 Section Cross References
 
-    dft.o(moncode) refers (Special) to tabsincos.o(Trigo) for TabCos
-    dft.o(moncode) refers to script.o(Signal) for TabSig
+    dft.o(monconde) refers (Special) to tabsincos.o(Trigo) for TabCos
+    dft.o(monconde) refers (Special) to script.o(Signal) for TabSig
     sommecarre.o(moncode) refers to tabsincos.o(Trigo) for TabSin
     startup-rvds.o(RESET) refers to startup-rvds.o(STACK) for __initial_sp
     startup-rvds.o(RESET) refers to startup-rvds.o(.text) for Reset_Handler
     startup-rvds.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
-    principal.o(i.main) refers to dft.o(moncode) for dft
-    principal.o(i.main) refers to tabsincos.o(Trigo) for TabSin
+    principal.o(i.main) refers to dft.o(monconde) for dft
     principal.o(i.main) refers to script.o(Signal) for TabSig
+    principal.o(i.main) refers to tabsincos.o(Trigo) for TabSin
+    principal.o(i.main) refers to principal.o(.bss) for im
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
@@ -47,10 +48,11 @@ Image Symbol Table
 
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
@@ -59,7 +61,6 @@ Image Symbol Table
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
     Script.s                                 0x00000000   Number         0  script.o ABSOLUTE
     Src\principal.c                          0x00000000   Number         0  principal.o ABSOLUTE
     Src\startup-rvds.s                       0x00000000   Number         0  startup-rvds.o ABSOLUTE
@@ -86,10 +87,11 @@ Image Symbol Table
     i.__scatterload_null                     0x0800017e   Section        2  handlers.o(i.__scatterload_null)
     i.__scatterload_zeroinit                 0x08000180   Section       14  handlers.o(i.__scatterload_zeroinit)
     i.main                                   0x08000190   Section        0  principal.o(i.main)
-    moncode                                  0x080001a8   Section       92  dft.o(moncode)
-    Signal                                   0x08000214   Section      128  script.o(Signal)
-    Trigo                                    0x08000294   Section      256  tabsincos.o(Trigo)
-    STACK                                    0x20000000   Section     1024  startup-rvds.o(STACK)
+    monconde                                 0x080001d4   Section       66  dft.o(monconde)
+    Signal                                   0x08000228   Section      128  script.o(Signal)
+    Trigo                                    0x080002a8   Section      256  tabsincos.o(Trigo)
+    .bss                                     0x20000000   Section      512  principal.o(.bss)
+    STACK                                    0x20000200   Section     1024  startup-rvds.o(STACK)
 
     Global Symbols
 
@@ -173,14 +175,16 @@ Image Symbol Table
     __scatterload_copy                       0x08000171   Thumb Code    14  handlers.o(i.__scatterload_copy)
     __scatterload_null                       0x0800017f   Thumb Code     2  handlers.o(i.__scatterload_null)
     __scatterload_zeroinit                   0x08000181   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    main                                     0x08000191   Thumb Code    16  principal.o(i.main)
-    dft                                      0x080001a9   Thumb Code    84  dft.o(moncode)
-    Region$$Table$$Base                      0x08000204   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08000214   Number         0  anon$$obj.o(Region$$Table)
-    TabSig                                   0x08000214   Data           0  script.o(Signal)
-    TabCos                                   0x08000294   Data           0  tabsincos.o(Trigo)
-    TabSin                                   0x08000314   Data           0  tabsincos.o(Trigo)
-    __initial_sp                             0x20000400   Data           0  startup-rvds.o(STACK)
+    main                                     0x08000191   Thumb Code    46  principal.o(i.main)
+    dft                                      0x080001d5   Thumb Code    66  dft.o(monconde)
+    Region$$Table$$Base                      0x08000218   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08000228   Number         0  anon$$obj.o(Region$$Table)
+    TabSig                                   0x08000228   Data           0  script.o(Signal)
+    TabCos                                   0x080002a8   Data           0  tabsincos.o(Trigo)
+    TabSin                                   0x08000328   Data           0  tabsincos.o(Trigo)
+    im                                       0x20000000   Data         256  principal.o(.bss)
+    re                                       0x20000100   Data         256  principal.o(.bss)
+    __initial_sp                             0x20000600   Data           0  startup-rvds.o(STACK)
 
 
 
@@ -190,40 +194,42 @@ Memory Map of the image
 
   Image Entry point : 0x080000ed
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00000394, Max: 0x00020000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000003a8, Max: 0x00020000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00000394, Max: 0x00020000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000003a8, Max: 0x00020000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x000000ec   Data   RO           15    RESET               startup-rvds.o
-    0x080000ec   0x080000ec   0x00000000   Code   RO           32  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x080000ec   0x080000ec   0x00000004   Code   RO           35    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x080000f0   0x080000f0   0x00000004   Code   RO           38    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x080000f4   0x080000f4   0x00000000   Code   RO           40    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x080000f4   0x080000f4   0x00000000   Code   RO           42    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x080000f4   0x080000f4   0x00000008   Code   RO           43    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x080000fc   0x080000fc   0x00000000   Code   RO           45    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x080000fc   0x080000fc   0x00000000   Code   RO           47    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x080000fc   0x080000fc   0x00000004   Code   RO           36    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x080000ec   0x080000ec   0x00000000   Code   RO           35  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x080000ec   0x080000ec   0x00000004   Code   RO           38    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x080000f0   0x080000f0   0x00000004   Code   RO           41    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x080000f4   0x080000f4   0x00000000   Code   RO           43    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x080000f4   0x080000f4   0x00000000   Code   RO           45    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x080000f4   0x080000f4   0x00000008   Code   RO           46    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x080000fc   0x080000fc   0x00000000   Code   RO           48    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x080000fc   0x080000fc   0x00000000   Code   RO           50    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x080000fc   0x080000fc   0x00000004   Code   RO           39    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x08000100   0x08000100   0x0000004c   Code   RO           16    .text               startup-rvds.o
-    0x0800014c   0x0800014c   0x00000024   Code   RO           49    .text               mc_w.l(init.o)
-    0x08000170   0x08000170   0x0000000e   Code   RO           53    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x0800017e   0x0800017e   0x00000002   Code   RO           54    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08000180   0x08000180   0x0000000e   Code   RO           55    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x0800014c   0x0800014c   0x00000024   Code   RO           52    .text               mc_w.l(init.o)
+    0x08000170   0x08000170   0x0000000e   Code   RO           56    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x0800017e   0x0800017e   0x00000002   Code   RO           57    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08000180   0x08000180   0x0000000e   Code   RO           58    i.__scatterload_zeroinit  mc_w.l(handlers.o)
     0x0800018e   0x0800018e   0x00000002   PAD
-    0x08000190   0x08000190   0x00000018   Code   RO           20    i.main              principal.o
-    0x080001a8   0x080001a8   0x0000005c   Code   RO            1    moncode             dft.o
-    0x08000204   0x08000204   0x00000010   Data   RO           51    Region$$Table       anon$$obj.o
-    0x08000214   0x08000214   0x00000080   Data   RO            7    Signal              script.o
-    0x08000294   0x08000294   0x00000100   Data   RO           12    Trigo               tabsincos.o
+    0x08000190   0x08000190   0x00000044   Code   RO           20    i.main              principal.o
+    0x080001d4   0x080001d4   0x00000042   Code   RO            1    monconde            dft.o
+    0x08000216   0x08000216   0x00000002   PAD
+    0x08000218   0x08000218   0x00000010   Data   RO           54    Region$$Table       anon$$obj.o
+    0x08000228   0x08000228   0x00000080   Data   RO            7    Signal              script.o
+    0x080002a8   0x080002a8   0x00000100   Data   RO           12    Trigo               tabsincos.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08000394, Size: 0x00000400, Max: 0x00005000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080003a8, Size: 0x00000600, Max: 0x00005000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000        -       0x00000400   Zero   RW           13    STACK               startup-rvds.o
+    0x20000000        -       0x00000200   Zero   RW           21    .bss                principal.o
+    0x20000200        -       0x00000400   Zero   RW           13    STACK               startup-rvds.o
 
 
 ==============================================================================
@@ -233,16 +239,16 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-        92          8          0          0          0        368   dft.o
-        24          8          0          0          0       1887   principal.o
+        66          0          0          0          0        364   dft.o
+        68         22          0          0        512       2466   principal.o
          0          0        128          0          0          0   script.o
         76         20        236          0       1024        820   startup-rvds.o
          0          0        256          0          0          0   tabsincos.o
 
     ----------------------------------------------------------------------
-       192         36        636          0       1024       3075   Object Totals
+       212         42        636          0       1536       3650   Object Totals
          0          0         16          0          0          0   (incl. Generated)
-         0          0          0          0          0          0   (incl. Padding)
+         2          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -279,15 +285,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-       280         52        636          0       1024       3243   Grand Totals
-       280         52        636          0       1024       3243   ELF Image Totals
-       280         52        636          0          0          0   ROM Totals
+       300         58        636          0       1536       3818   Grand Totals
+       300         58        636          0       1536       3818   ELF Image Totals
+       300         58        636          0          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                  916 (   0.89kB)
-    Total RW  Size (RW Data + ZI Data)              1024 (   1.00kB)
-    Total ROM Size (Code + RO Data + RW Data)        916 (   0.89kB)
+    Total RO  Size (Code + RO Data)                  936 (   0.91kB)
+    Total RW  Size (RW Data + ZI Data)              1536 (   1.50kB)
+    Total ROM Size (Code + RO Data + RW Data)        936 (   0.91kB)
 
 ==============================================================================
 
