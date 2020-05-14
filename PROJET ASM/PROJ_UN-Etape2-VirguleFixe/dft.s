@@ -29,14 +29,14 @@ boucleFor
     
     
     ;ldr    r12, [r1, #1]!
-    ldrsh    r12, [r2, r3, lsl #1]  ; r12 = x(i)
+    ldrsh    r12, [r2, r7, lsl #1]  ; r12 = x(i)
     
     
     mov    r12, r12, LSL #24
     mov    r12, r12, LSR #24
          
 
-    ldrsh    r4, [r1, r3, LSL #1]  ;      r4 = sin[ik modulo 64]
+    ldrsh    r4, [r1, r7, LSL #1]  ;      r4 = sin[ik modulo 64]
     
     
     ;mov    r4, r4, LSL #16

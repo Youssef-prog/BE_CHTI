@@ -1,5 +1,5 @@
 	AREA Signal, DATA, READONLY
-	export TabSig
+	;export TabSig
 
 ; Fnor1 = 1.000
 ;   Ph1 = 0.000
