@@ -322,8 +322,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\Src\dft.s</PathWithFileName>
-      <FilenameWithoutPath>dft.s</FilenameWithoutPath>
+      <PathWithFileName>.\Src\TabSinCos.s</PathWithFileName>
+      <FilenameWithoutPath>TabSinCos.s</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -334,8 +334,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\Src\Script.s</PathWithFileName>
-      <FilenameWithoutPath>Script.s</FilenameWithoutPath>
+      <PathWithFileName>.\Src\dft.s</PathWithFileName>
+      <FilenameWithoutPath>dft.s</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -346,8 +346,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\Src\TabSinCos.s</PathWithFileName>
-      <FilenameWithoutPath>TabSinCos.s</FilenameWithoutPath>
+      <PathWithFileName>.\Src\Script.s</PathWithFileName>
+      <FilenameWithoutPath>Script.s</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

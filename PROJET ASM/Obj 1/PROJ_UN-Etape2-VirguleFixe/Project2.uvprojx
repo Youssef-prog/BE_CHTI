@@ -417,6 +417,11 @@
               <FilePath>.\Src\module.s</FilePath>
             </File>
             <File>
+              <FileName>TabSinCos.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\Src\TabSinCos.s</FilePath>
+            </File>
+            <File>
               <FileName>dft.s</FileName>
               <FileType>2</FileType>
               <FilePath>.\Src\dft.s</FilePath>
@@ -425,11 +430,6 @@
               <FileName>Script.s</FileName>
               <FileType>2</FileType>
               <FilePath>.\Src\Script.s</FilePath>
-            </File>
-            <File>
-              <FileName>TabSinCos.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\Src\TabSinCos.s</FilePath>
             </File>
           </Files>
         </Group>
