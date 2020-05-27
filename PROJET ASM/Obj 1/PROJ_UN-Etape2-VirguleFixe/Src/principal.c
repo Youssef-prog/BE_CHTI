@@ -17,7 +17,7 @@ int main(void){ // faire boucle for
 	}*/
 
 	int k = 23;
-	m2 = M2(&TabSig, k);
+	m2 = M2(&TabSig, k); 
 
-	while(1){}
+	while(1){} 
 }

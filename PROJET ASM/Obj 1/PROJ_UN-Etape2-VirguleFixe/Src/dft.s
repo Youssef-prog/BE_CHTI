@@ -10,12 +10,8 @@
     ; avec k = donnée, x(i) = le signal,  ik = index d'entree trigo
     
 dft    proc                ; r0 = k
-    
-    push    {lr}
-    push    {r4}
-    push    {r5}
-    push    {r6}
-    push    {r7}
+	push    {r1-r7,r12}
+   
     
     mov    r7, r0        ; r7 = k
     mov    r6, #0        ; r6 stock la valeur que l'on va return
@@ -52,11 +48,8 @@ boucleFor
     
     mov    r0, r6
     
-    pop    {r7}
-    pop    {r6}
-    pop    {r5}
-    pop    {r4}
-    pop    {pc}
+    pop    {r1-r7,r12}
+    bx lr
     
     endp
     

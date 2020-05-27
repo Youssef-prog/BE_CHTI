@@ -11,7 +11,7 @@
 ; valeurs attendues pour k = 23 :
 ;	Re	0x0378FDBD
 ;	Im	0x01BAD0C5	env 0.5 * Re, car tan(26.565) ~= 0.5
-;	M2	0x000F0D16	986390
+;	M2	0x000F0D16	986390 
 ;
 ; valeurs attendues pour k = 24 :
 ;	Re	0xE36136DD	env -0.447 * 2^30
